@@ -12,7 +12,7 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
             .info(new Info()
-                .title("API de Transações")
+                .title("API de Transações - Itaú")
                 .version("1.0")
                 .description("API desenvolvida para o teste técnico da empresa Itaú, cujo objetivo é simular transações e retornar suas estatísticas (mais especificamente, estatísticas de transações até 60 segundos atrás)"));
     }
