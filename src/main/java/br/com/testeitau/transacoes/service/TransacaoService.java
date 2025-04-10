@@ -15,7 +15,7 @@ import br.com.testeitau.transacoes.model.Transacao;
 @Service
 public class TransacaoService {
   
-  List<Transacao> transactionList = new ArrayList<>();
+  private final List<Transacao> transactionList = new ArrayList<>();
 
 
   public void postTransaction(Transacao transacao){
