@@ -38,11 +38,11 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 
 ## 📌 Endpoints
 
-| Método | Caminho                    | Descrição                          |
-|--------|----------------------------|------------------------------------|
-| POST   | `/transacoes`              | Registra nova transação            |
-| DELETE | `/transacoes`              | Remove todas as transações         |
-| GET    | `/transacoes/estatisticas` | Retorna estatísticas dos últimos 60s |
+| Método | Caminho                    | Descrição                           |
+|--------|----------------------------|-------------------------------------|
+| POST   | `/transacoes`              | Registra nova transação             |
+| DELETE | `/transacoes`              | Remove todas as transações          |
+| GET    | `/estatisticas`            | Retorna estatísticas dos últimos 60s|
 
 ## ✅ Funcionalidades
 
@@ -59,6 +59,7 @@ br.com.testeitau.transacoes
 ├── dto
 ├── exception
 ├── model
+├── mapper
 ├── service
 └── TransacoesApplication.java
 ```
