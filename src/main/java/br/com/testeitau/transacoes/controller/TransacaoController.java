@@ -1,7 +1,11 @@
 package br.com.testeitau.transacoes.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.DoubleSummaryStatistics;
+
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +41,7 @@ public class TransacaoController {
             @ApiResponse(responseCode = "409", description = "Conflito ao processar a transação."),
             @ApiResponse(responseCode = "422", description = "Transação não concluída, possivelmente erro com valores inválidos.")
     })
+
   @PostMapping("/transacao")
   public ResponseEntity<Void> postTransactionHTTPSMethod(@RequestBody TransactionRequestDTO transactionDTO) {
     Transacao transacao = TransacaoMapper.toEntity(transactionDTO);
@@ -45,6 +50,20 @@ public class TransacaoController {
 
     return ResponseEntity.status(201).build();
 
+  }
+
+  @DeleteMapping("/delete")
+  public ResponseEntity<Void> deleteTransactionHTTPSMethod() {
+    transacaoService.clearTransactions();
+
+    return ResponseEntity.noContent().build();
+  }
+
+  @GetMapping("/estatisticas")
+  public ResponseEntity<DoubleSummaryStatistics> getLast60SecondsTransactionsStatisticsHTTPSMethod(){
+    
+
+    return ResponseEntity.ok(transacaoService.getLast60SecondsTransactionStatistics());
   }
   
 
