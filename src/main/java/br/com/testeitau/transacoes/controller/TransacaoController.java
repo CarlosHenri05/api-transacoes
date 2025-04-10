@@ -53,8 +53,8 @@ public class TransacaoController {
   }
 
   @Operation (summary = "Deletar todas as transações")
-  @DeleteMapping("/delete")
-  public ResponseEntity<Void> deleteTransactionHTTPSMethod() {
+  @DeleteMapping("/transacoes")
+  public ResponseEntity<Void> deleteTransactionsHTTPSMethod() {
     transacaoService.clearTransactions();
 
     return ResponseEntity.noContent().build();
