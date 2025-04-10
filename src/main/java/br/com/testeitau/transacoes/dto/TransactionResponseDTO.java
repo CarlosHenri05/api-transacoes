@@ -20,4 +20,9 @@ public class TransactionResponseDTO {
   public void setDataHora(String dataHora) {
       this.dataHora = dataHora;
   }
+
+  public TransactionResponseDTO(double valor, String dataHora) {
+    this.valor = valor;
+    this.dataHora = dataHora;
+  }
 }
