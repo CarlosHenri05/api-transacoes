@@ -5,11 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.testeitau.transacoes.dto.TransactionRequestDTO;
+import br.com.testeitau.transacoes.mapper.TransacaoMapper;
 import br.com.testeitau.transacoes.model.Transacao;
 import br.com.testeitau.transacoes.service.TransacaoService;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
@@ -26,13 +29,24 @@ public class TransacaoController {
       this.transacaoService = transacaoService;
   }
 
-  // @Operation (summary = "Realizar transações")
-  // @ApiResponses(value = {
-  //           @ApiResponse(responseCode = "201", description = "Transação concluída e dados criados."),
-  //           @ApiResponse(responseCode = "400", description = "Requisição inválida."),
-  //           @ApiResponse(responseCode = "409", description = "Conflito ao processar a transação."),
-  //           @ApiResponse(responseCode = "422", description = "Transação não concluída, possivelmente erro com valores inválidos.")
-  //   })
+  
+  @Operation (summary = "Realizar transações")
+  @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Transação concluída e dados criados."),
+            @ApiResponse(responseCode = "400", description = "Requisição inválida."),
+            @ApiResponse(responseCode = "409", description = "Conflito ao processar a transação."),
+            @ApiResponse(responseCode = "422", description = "Transação não concluída, possivelmente erro com valores inválidos.")
+    })
+  @PostMapping("/transacao")
+  public ResponseEntity<Void> postTransactionHTTPSMethod(@RequestBody TransactionRequestDTO transactionDTO) {
+    Transacao transacao = TransacaoMapper.toEntity(transactionDTO);
+
+    transacaoService.postTransaction(transacao);
+
+    return ResponseEntity.status(201).build();
+
+  }
+  
 
   
 
