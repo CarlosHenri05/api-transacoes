@@ -37,11 +37,13 @@ public class TransacaoService {
     transactionList.clear();
   }
 
-  public DoubleSummaryStatistics getTransactionStatistics() {
+  public DoubleSummaryStatistics getLast60SecondsTransactionStatistics() {
       OffsetDateTime now = OffsetDateTime.now();
-
+      if (transactionList.stream().anyMatch(transacao -> transacao == null)) 
+          throw new TransactionException("A lista de transações contém valores nulos.");
+      
       return transactionList.stream()
-                            .filter(transacao -> transacao.getDataHora().isAfter(now.minusSeconds(60)))
+                            .filter(transaction -> transaction.getDataHora().isAfter(now.minusSeconds(60)))
                             .collect(Collectors.summarizingDouble(Transacao::getValor));
                             
 
