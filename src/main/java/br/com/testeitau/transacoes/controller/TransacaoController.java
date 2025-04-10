@@ -52,6 +52,7 @@ public class TransacaoController {
 
   }
 
+  @Operation (summary = "Deletar todas as transações")
   @DeleteMapping("/delete")
   public ResponseEntity<Void> deleteTransactionHTTPSMethod() {
     transacaoService.clearTransactions();
@@ -59,9 +60,9 @@ public class TransacaoController {
     return ResponseEntity.noContent().build();
   }
 
+  @Operation (summary = "Retornar dados baseados em estatísticas das transações")
   @GetMapping("/estatisticas")
   public ResponseEntity<DoubleSummaryStatistics> getLast60SecondsTransactionsStatisticsHTTPSMethod(){
-    
 
     return ResponseEntity.ok(transacaoService.getLast60SecondsTransactionStatistics());
   }
