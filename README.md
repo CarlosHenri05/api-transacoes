@@ -1,6 +1,6 @@
 # 📊 API de Transações
 
-API REST que registra transações monetárias e calcula estatísticas em tempo real com base nos últimos 60 segundos.
+API REST que registra transações monetárias e calcula estatísticas em tempo real com base nos últimos 60 segundos, baseado no teste técnico do Itaú.
 
 ## 🔧 Tecnologias Utilizadas
 
@@ -96,5 +96,13 @@ GET /transacoes/estatisticas
 ## 🧪 Testes
 
 Em breve será adicionado suporte a testes automatizados para garantir a robustez da aplicação.
+
+## Futuras tecnologias 
+
+- Testes unitários com JUnit e Mockito juntos.
+- Ferramentas de container (Docker).
+- Ferramentas para segurança e autenticação (Spring Security e JWT).
+- Não é o objetivo do teste, mas poderiamos sim juntar a aplicação com bancos de dados relacionais. 
+
 
 ---
