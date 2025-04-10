@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 public class TransacaoMapper {
 
-  public Transacao toEntity(TransactionRequestDTO transactionRequestDTO) {
+  public static Transacao toEntity(TransactionRequestDTO transactionRequestDTO) {
     Transacao transacao = new Transacao(transactionRequestDTO.getDataHora(), transactionRequestDTO.getValor());
 
     return transacao;

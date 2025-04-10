@@ -14,7 +14,6 @@ public class TransactionRequestDTO {
     @NotNull
     private OffsetDateTime dataHora;
 
-    // Getters e Setters
     public Double getValor() {
         return valor;
     }
@@ -30,4 +29,11 @@ public class TransactionRequestDTO {
     public void setDataHora(OffsetDateTime dataHora) {
         this.dataHora = dataHora;
     }
+
+    public TransactionRequestDTO(@NotNull @Positive Double valor, @NotNull OffsetDateTime dataHora) {
+      this.valor = valor;
+      this.dataHora = dataHora;
+    }
+
+    
 }
