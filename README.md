@@ -80,7 +80,7 @@ Content-Type: application/json
 ### Estatísticas
 
 ```http
-GET /transacoes/estatisticas
+GET /estatisticas
 ```
 
 ```json
