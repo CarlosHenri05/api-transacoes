@@ -15,13 +15,13 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/CarlosHenri05/transacoes.git
+   git clone https://github.com/CarlosHenri05/api-transacoes.git
    ```
 
 2. Navegue até a pasta do projeto:
 
    ```bash
-   cd transacoes
+   cd api-transacoes
    ```
 
 3. Compile e execute:
@@ -40,7 +40,7 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 
 | Método | Caminho                    | Descrição                           |
 |--------|----------------------------|-------------------------------------|
-| POST   | `/transacoes`              | Registra nova transação             |
+| POST   | `/transacao`               | Registra nova transação             |
 | DELETE | `/transacoes`              | Remove todas as transações          |
 | GET    | `/estatisticas`            | Retorna estatísticas dos últimos 60s|
 
