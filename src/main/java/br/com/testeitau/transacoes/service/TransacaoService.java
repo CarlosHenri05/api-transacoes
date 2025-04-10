@@ -4,9 +4,7 @@ package br.com.testeitau.transacoes.service;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.DoubleSummaryStatistics;
-import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
