@@ -55,6 +55,7 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 
 ```
 br.com.testeitau.transacoes
+├── config 
 ├── controller
 ├── dto
 ├── exception
