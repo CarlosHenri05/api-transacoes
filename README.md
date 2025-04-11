@@ -62,7 +62,7 @@ br.com.testeitau.transacoes
 ├── model
 ├── mapper
 ├── service
-└── TransacoesApplication.java
+└── ApiTransacoesApplication.java
 ```
 
 ## 📄 Exemplos de Requisições
