@@ -46,8 +46,9 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 
 ## ✅ Funcionalidades
 
-- Adiciona transações com data e valor
-- Impede transações com data futura
+- Adiciona transações com data e valor.
+- Impede transações com data futura.
+- Impede transações com valor igual ou abaixo de 0.
 - Calcula `sum`, `avg`, `min`, `max` e `count` baseado nas transações dos últimos 60 segundos. 
 
 ## 📁 Estrutura do Projeto
