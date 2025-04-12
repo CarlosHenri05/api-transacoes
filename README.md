@@ -27,7 +27,7 @@ API REST que registra transações monetárias e calcula estatísticas em tempo 
 3. Compile e execute:
 
    ```bash
-   ./mvnw spring-boot:run
+   ./mvn spring-boot:run
    ```
 
 4. Acesse a documentação Swagger:
